@@ -22,7 +22,8 @@ namespace HolidayMailerCSCD350
         
         public String ToString()
         {
-            return this.lname + ", " + this.fname + " " + this.email + "\n\n";
+            //Will have to figure out how to avoid NULL references in the unneeded db columns (IE relationship)
+            return this.lname + ", " + this.fname + " " + this.email + "\n";
         }
     }
 }
