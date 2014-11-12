@@ -1,7 +1,5 @@
 HolidayMailerDreamStreetCSCD350
 ===============================
-NOTE: Although public, we are not currently looking for any assistance. This is a class assignment. Thank you.
-
 EWU CSCD350 Fall 2014
 Dream Street
 Holiday Mailer project
