@@ -23,6 +23,7 @@ namespace HolidayMailerCSCD350
             connection.Open();
         }
 
+        //SQL INJECTION PREVENTION DOES NOT WORK - @X must truly be storing a value, not statements
         public void insert(string into, string values)
         {
             str = "INSERT INTO " + into + " VALUES @values";
