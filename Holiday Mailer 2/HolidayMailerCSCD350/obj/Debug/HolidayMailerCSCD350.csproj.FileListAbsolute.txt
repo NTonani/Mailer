@@ -24,3 +24,19 @@ C:\Users\Leland\Documents\school\programming\SOFTWARE ENGINEERING\HolidayMailerD
 C:\Users\Leland\Documents\school\programming\SOFTWARE ENGINEERING\HolidayMailerDreamStreetCSCD350-master\HolidayMailerDreamStreetCSCD350-master\Holiday Mailer\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.MailerForm.resources
 C:\Users\Leland\Documents\school\programming\SOFTWARE ENGINEERING\HolidayMailerDreamStreetCSCD350-master\HolidayMailerDreamStreetCSCD350-master\Holiday Mailer\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.NewAccountForm.resources
 C:\Users\Leland\Documents\school\programming\SOFTWARE ENGINEERING\HolidayMailerDreamStreetCSCD350-master\HolidayMailerDreamStreetCSCD350-master\Holiday Mailer\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.SettingsForm.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\HolidayMailerCSCD350.exe.config
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.exe
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.pdb
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\HolidayMailerCSCD350.exe
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\HolidayMailerCSCD350.pdb
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\System.Data.SQLite.pdb
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.csprojResolveAssemblyReference.cache
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.Form1.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.LoginForm.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.MailerForm.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.NewAccountForm.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.Properties.Resources.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.SettingsForm.resources
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.csproj.GenerateResource.Cache
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\System.Data.SQLite.dll
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\System.Data.SQLite.xml
