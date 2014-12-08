@@ -9,9 +9,9 @@ namespace HolidayMailerCSCD350
 {
     class Contact
     {
-        public String lname, fname, email, rel, DOB;
+        public string lname, fname, email, rel, DOB;
         public int prev;
-        public Contact(String lname, String fname, String email,int prev,String rel, String DOB)
+        public Contact(string lname, string fname, string email,int prev,string rel, string DOB)
         {
             this.lname = lname;
             this.fname = fname;

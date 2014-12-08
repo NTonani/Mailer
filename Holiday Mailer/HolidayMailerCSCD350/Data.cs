@@ -9,9 +9,11 @@ namespace HolidayMailerCSCD350
 {
     class Data
     {
-        public static Database db;
+        public static Database db = new Database(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         public static List<Contact> cont;
-        public static Mail mail;
+        public static Mail mail;//get rid of
+        public static User user;
+        
 
         public static void OrderBy(string order)
         {

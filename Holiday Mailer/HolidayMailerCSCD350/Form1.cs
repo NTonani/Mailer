@@ -24,7 +24,7 @@ namespace HolidayMailerCSCD350
         {
             InitializeComponent();
             //connection = new SQLiteConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-            Data.db = new Database(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+            //Data.db = new Database(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
             Data.cont = Data.db.ReadIn();
             Data.mail = new Mail("dreamstreetmailer@yahoo.com", "Fk u");
         }
@@ -43,9 +43,9 @@ namespace HolidayMailerCSCD350
         {
             try
             {
-
-                dobtb.Text = Data.db.Insert(lnametb.Text, fnametb.Text, emailtb.Text, Convert.ToInt32(prevcb.Checked).ToString(), reltb.Text, dobtb.Text);
                 Data.cont.Add(new Contact(lnametb.Text, fnametb.Text, emailtb.Text, Convert.ToInt32(prevcb.Checked), reltb.Text, dobtb.Text));
+                dobtb.Text = Data.db.Insert(Data.cont[Data.cont.Count() - 1]);
+                
 
             }
             catch (Exception error)
@@ -93,6 +93,45 @@ namespace HolidayMailerCSCD350
         private void searchbtn_Click(object sender, EventArgs e)
         {
                 ShowContacts(Data.Search(searchtb.Text));
+        }
+
+        private void userbtn_Click(object sender, EventArgs e)
+        {
+            
+            try{
+
+                User temp = Data.db.ReadUser(fnametb.Text, lnametb.Text);
+                if (temp != null)
+                {
+                    outputtb.Text = temp.ToString();
+                }
+                else
+                    outputtb.Text = "inVALID CREDENTIALS";
+            }catch(Exception Er){
+                outputtb.Text = Er.ToString();
+            }
+            
+        }
+
+        private void userdbbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                List<UserMail> tempUM = new List<UserMail>{};
+                tempUM.Add(new UserMail(email1tb.Text,pw1tb.Text));
+                tempUM.Add(new UserMail(email2tb.Text,pw2tb.Text));
+                User temp = new User(usertb.Text,fnametb.Text,lnametb.Text,dobtb.Text,pwdtb.Text,tempUM);
+                bool check = Data.db.AddUser(temp);
+                if (check)
+                    outputtb.Text = "Success";
+                else
+                    outputtb.Text = "Failed";
+            }
+            catch (Exception er)
+            {
+                outputtb.Text = er.ToString();
+            }
+
         }
     }
 }

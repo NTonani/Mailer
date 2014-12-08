@@ -28,9 +28,11 @@ namespace HolidayMailerCSCD350
 
         public List<Contact> ReadIn()
         {
-            str = "SELECT * FROM Contacts";
+            str = "SELECT * FROM Contacts where User=@u";
+
             List<Contact> temp = new List<Contact> { };
             command = new SQLiteCommand(str, connection);
+            command.Parameters.AddWithValue("u", Data.user.username);
             dr = command.ExecuteReader();
             while (dr.Read())
             {
@@ -58,19 +60,21 @@ namespace HolidayMailerCSCD350
             return temp;
         }
 
-        public string Insert(string l, string f, string em, string prev, string rel, string dob)
+        //Inserting contact 
+        public string Insert(Contact cont)
         {
             try
             {
                 connection.Open();
-                str = "INSERT INTO Contacts VALUES (@l,@f,@em,@prev,@rel,@dob)";
+                str = "INSERT INTO Contacts VALUES (@l,@f,@em,@prev,@rel,@dob,@user)";
                 command = new SQLiteCommand(str, connection);
-                command.Parameters.AddWithValue("l", l);
-                command.Parameters.AddWithValue("f", f);
-                command.Parameters.AddWithValue("em", em);
-                command.Parameters.AddWithValue("prev", prev);
-                command.Parameters.AddWithValue("rel", rel);
-                command.Parameters.AddWithValue("dob", dob);
+                command.Parameters.AddWithValue("l", cont.lname);
+                command.Parameters.AddWithValue("f", cont.fname);
+                command.Parameters.AddWithValue("em", cont.email);
+                command.Parameters.AddWithValue("prev", cont.prev);
+                command.Parameters.AddWithValue("rel", cont.rel);
+                command.Parameters.AddWithValue("dob", cont.DOB);
+                command.Parameters.AddWithValue("user", Data.user.username);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return null;
@@ -80,6 +84,105 @@ namespace HolidayMailerCSCD350
                 return er.ToString();
             }
         }
+
+        //Adding new user from account creation
+        public bool AddUser(User user)
+        {
+            try
+            {
+                connection.Open();
+                str = "Insert into User VALUES (@u,@l,@f,@dob,@pwd)";
+                command = new SQLiteCommand(str, connection);
+                command.Parameters.AddWithValue("u",user.username);
+                command.Parameters.AddWithValue("l",user.lname);
+                command.Parameters.AddWithValue("f",user.fname);
+                command.Parameters.AddWithValue("dob",user.DOB);
+                command.Parameters.AddWithValue("pwd",user.pwd);
+                command.ExecuteNonQuery();
+                foreach (UserMail element in user.accounts){
+                    str = "INSERT into UserEmail VALUES (@u,@e,@p)";
+                    command = new SQLiteCommand(str,connection);
+                    command.Parameters.AddWithValue("u",user.username);
+                    command.Parameters.AddWithValue("e",element.email);
+                    command.Parameters.AddWithValue("p",element.pwd);
+                    command.ExecuteNonQuery();
+                }
+
+                return true;
+
+
+            }
+            catch (Exception er)
+            {
+                return false;
+            }
+        }
+
+
+
+        public User ReadUser(string username, string password)
+        {
+           
+            try
+            {
+                User tempuser;
+                List<UserMail> tempmail = new List<UserMail> { };
+                connection.Open();
+                str = "Select * from User where upper(Username) = @u AND Password = @p";
+                command = new SQLiteCommand(str, connection);
+                command.Parameters.AddWithValue("u", username.ToUpper());
+                command.Parameters.AddWithValue("p", password);
+                dr = command.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    
+                    while (dr.Read())
+                    {
+                        string lname = dr["Lname"].ToString();
+                        string fname = dr["Fname"].ToString();
+                        string dob = dr["DOB"].ToString();
+                        string pw = dr["Password"].ToString();
+                        str = "Select * from UserEmail where upper(Username) = @u";
+                        command = new SQLiteCommand(str, connection);
+                        command.Parameters.AddWithValue("u", username.ToUpper());
+                        dr = command.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            
+                            while (dr.Read())
+                            {
+                                tempmail.Add(new UserMail(dr["Email"].ToString(), dr["Password"].ToString()));
+                            }
+                            
+                            tempuser = new User(username, fname, lname, dob, pw, tempmail);
+                            connection.Close();
+                            return tempuser;
+
+                        }
+                        else
+                        {
+                            connection.Close();
+                            
+                            return null;
+                        }
+                    }
+                    
+                }
+                else
+                {
+                    connection.Close();
+                    
+                    return null;
+                }
+            }
+            catch (Exception er)
+            {
+                return null;
+            }
+            
+            return null; ;
+        }
+         
 
         /*
         public List<Contact> ReadIn(string order)
