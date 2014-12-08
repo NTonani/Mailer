@@ -408,6 +408,8 @@ namespace HolidayMailerCSCD350
             }
         }
 
+
+        //add bcc label that when clicked will open a new textbox for bcc input
         private void toLabel_Click(object sender, EventArgs e)
         {
 

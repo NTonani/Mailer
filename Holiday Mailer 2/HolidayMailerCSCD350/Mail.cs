@@ -14,7 +14,7 @@ namespace HolidayMailerCSCD350
     {
         private string f, recipients, name, subject, body;
         private List<string> attachedfiles;
-        private MailAddress from, to;
+        private MailAddress from;
         private MailMessage message;
         private SmtpClient client;
 
