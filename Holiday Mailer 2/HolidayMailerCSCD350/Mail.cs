@@ -12,7 +12,8 @@ namespace HolidayMailerCSCD350
 {
     class Mail
     {
-        private string f, recipients, name, subject, body;
+        private string f, name, subject, body;
+        private List<string> to;
         private List<string> attachedfiles;
         private MailAddress from;
         private MailMessage message;
@@ -30,16 +31,16 @@ namespace HolidayMailerCSCD350
             DetermineSMTP();
         }
 
-        public void AddRecip(string recip)
+        public void AddRecip(List<string> to)
         {
-            this.recipients = recip;
+            this.to = to;
         }
 
         private bool DetermineSMTP()
         {
             try
             {
-                //DIDN'T DO office365, yahoo plus, at&t, 
+                //DIDNT DO office365, yahoo plus, at&t,  
                 if (f.Contains("@gmail"))
                     client = new SmtpClient("smtp.gmail.com", 587);
                 else if (f.Contains("@outlook"))
@@ -64,7 +65,7 @@ namespace HolidayMailerCSCD350
             }
         }
 
-        public bool ValidateEmail(string address)
+        public static bool ValidateEmail(string address)
         {
             if (Regex.IsMatch(address, @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$", RegexOptions.IgnoreCase))
             {
@@ -78,7 +79,7 @@ namespace HolidayMailerCSCD350
             //REMEMBER GMAIL USERS MUST ENABLE LESSSECUREAPPS https://www.google.com/settings/security/lesssecureapps
             try
             {
-                using (BackgroundWorker b = new BackgroundWorker())
+                using (worker)
                 {
 
                     message = new MailMessage();
@@ -88,13 +89,9 @@ namespace HolidayMailerCSCD350
                     // going to move this to the mailerform 
                    // Regex regex = new Regex();
 
-                    foreach (string address in recipients.Split(','))
+                    foreach (string address in to)
                     {
-                      //  Match match = regex.Match(address);
-                        if (ValidateEmail(address.Trim()))
-                        {
-                            message.To.Add(address);
-                        }
+                        message.To.Add(address);      
                     }
 
                     message.Subject = subject;

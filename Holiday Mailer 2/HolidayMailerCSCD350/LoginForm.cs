@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace HolidayMailerCSCD350
 {
     public partial class LoginForm : Form
     {
-        MailerForm mailer = new MailerForm();
-        NewAccountForm accountcreator = new NewAccountForm();
+        MailerForm mailer;
+        NewAccountForm accountcreator;
         bool accboxselected = false;
         bool pwselected = false;
 
@@ -21,8 +22,6 @@ namespace HolidayMailerCSCD350
         {
             InitializeComponent();
             this.ActiveControl = label6;     
-            mailer.FormClosing += new System.Windows.Forms.FormClosingEventHandler(MailerForm_FormClosing);
-            accountcreator.FormClosing += new System.Windows.Forms.FormClosingEventHandler(NewAccountForm_FormClosing);
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -30,8 +29,14 @@ namespace HolidayMailerCSCD350
             bool valid = ValidateLogin(accountTextBox.Text, pwTextBox.Text);
             if (valid)
             {
+                mailer = new MailerForm();
                 mailer.Show();
                 this.Hide();
+                if (accountcreator != null)
+                {
+                    accountcreator.Dispose();
+                    accountcreator = null;
+                }
             }
             else
             {
@@ -40,18 +45,10 @@ namespace HolidayMailerCSCD350
         }
 
 
-        private void MailerForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            mailer.Hide(); 
-            this.Show();
-        }
-
         private void NewAccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            accountcreator.Hide(); 
-            this.Show();
+            accountcreator.Dispose();
+            accountcreator = null;
         }
 
         private bool ValidateLogin(string account, string pw)
@@ -65,8 +62,13 @@ namespace HolidayMailerCSCD350
 
         private void newaccountButton_Click(object sender, EventArgs e)
         {
+            if (accountcreator == null)
+            {
+                accountcreator = new NewAccountForm();
+                accountcreator.FormClosing += new System.Windows.Forms.FormClosingEventHandler(NewAccountForm_FormClosing);
+            }
             accountcreator.Show();
-            this.Hide();
+            accountcreator.Focus();
         }
 
 
@@ -76,7 +78,7 @@ namespace HolidayMailerCSCD350
             if (!accboxselected)
             {
                 accountTextBox.Clear();
-                accountTextBox.ForeColor = Color.White;
+                accountTextBox.ForeColor = Color.Black;
                 accboxselected = true;
             }
 
@@ -97,7 +99,7 @@ namespace HolidayMailerCSCD350
             if (!pwselected)
             {
                 pwTextBox.Clear();
-                pwTextBox.ForeColor = Color.White;
+                pwTextBox.ForeColor = Color.Black;
                 pwTextBox.PasswordChar = '●';
                 pwselected = true;
             }
@@ -113,6 +115,50 @@ namespace HolidayMailerCSCD350
                 pwselected = false;
             }
         }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            if (mailer != null)
+            {
+                mailer.Dispose();
+            }
+            if (accountcreator != null)
+            {
+                accountcreator.Dispose();
+            }
+            this.Dispose();
+            Application.Exit();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+
+
+
+
+
+
 
 
 

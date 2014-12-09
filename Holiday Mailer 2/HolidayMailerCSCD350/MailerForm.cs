@@ -16,21 +16,24 @@ namespace HolidayMailerCSCD350
     public partial class MailerForm : Form
     {
 
+        bool searchselected = false;
+        bool tochanged = true;
+
         List<string> attachedfiles = new List<string>();
         ImageList attachmentImageList = new ImageList();
 
         List<Contact> selected = new List<Contact>();
         List<string> accountemails = new List<string>();
-        string defaultemail;
-
 
         List<string> contactlist = new List<string>();
-        string[] mailreqs = new string[5];
+        string[] mailreqs = new string[4];
         List<string> tolist = new List<string>();
 
         public MailerForm()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             accountpwBox.PasswordChar = '●';
 
@@ -39,31 +42,15 @@ namespace HolidayMailerCSCD350
             Data.db = new Database(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
             Data.cont = Data.db.ReadIn();
 
-            foreach (Contact c in Data.cont)
-            {
-                contactlist.Add(c.email);
-            }
-
-            string[] cs = contactlist.ToArray();
-            var source = new AutoCompleteStringCollection();
-            source.AddRange(cs);
-
-            toTextBox.AutoCompleteCustomSource = source;
-            toTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            toTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            ShowContacts(Data.cont);
 
             attachmentImageList.ImageSize = new Size(40, 40);
             attachView.LargeImageList = attachmentImageList;
             attachView.View = View.LargeIcon;
 
-
-
-
-            this.AllowDrop = true;
-            this.DragEnter += new DragEventHandler(MailerForm_DragEnter);
-            this.DragDrop += new DragEventHandler(MailerForm_DragDrop);
-
-            ShowContacts(Data.cont);
+            attachView.AllowDrop = true;
+            attachView.DragEnter += new DragEventHandler(attachView_DragEnter);
+            attachView.DragDrop += new DragEventHandler(attachView_DragDrop);
 
             bodyTextBox.AllowDrop = true;
             bodyTextBox.DragDrop += new DragEventHandler(bodyTextBox_DragDrop);
@@ -71,7 +58,7 @@ namespace HolidayMailerCSCD350
             accountviewBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             contactView.Columns.Add("name", 100);
-            contactView.Columns.Add("email", 150);
+            contactView.Columns.Add("email", 300);
 
             accountemails.Add("drinzypooh@hotmail.com");
             accountemails.Add("lelandburlingame@gmail.com");
@@ -87,7 +74,7 @@ namespace HolidayMailerCSCD350
 
             accountviewBox.Text = accountemails[0];
 
-            //SetTheme();
+            SetTheme(false);
 
         }
 
@@ -142,73 +129,46 @@ namespace HolidayMailerCSCD350
         private void contactView_SelectedIndexChanged(object sender, EventArgs e)
         {
             selected.Clear();
-            bodyTextBox.Clear();
 
             ListView.SelectedIndexCollection indexes = this.contactView.SelectedIndices;
 
-            foreach (int index in indexes)
+            if (searchselected)
             {
-                selected.Add(Data.Search(searchBox.Text)[index]);
+                foreach (int index in indexes)
+                {
+                    selected.Add(Data.Search(searchBox.Text)[index]);
+                }
+            }
+            else
+            {
+                foreach (int index in indexes)
+                {
+                    selected.Add(Data.cont[index]);
+                }
             }
 
-            /*
-            label2.Text = contactView.SelectedItems[0].SubItems[0].Text.ToString();
-            label3.Text = contactView.SelectedItems[0].SubItems[1].Text.ToString();
-            */
-            for (int i = 0; i < selected.Count; i++)
-            {
-                bodyTextBox.Text += selected[i].fname + " " + selected[i].lname + "\n";
-            }
         }
 
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            bodyTextBox.Clear();
-            ShowContacts(Data.Search(searchBox.Text));
+            if (searchselected)
+            {
+                ShowContacts(Data.Search(searchBox.Text));
+            }
         }
 
 
 
         private void MailerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Data.db.Close();
+            Application.Exit();
         }
 
 
 
-        /*
-         * DRAG DROP CODE
-         */
-        private void MailerForm_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-        }
 
-
-        private void MailerForm_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            MessageBox.Show("Hi");
-
-        }
-
-        void bodyTextBox_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            MessageBox.Show("Hi");
-        }
-
-        private void sc_Panel2_DragDrop(object sender, DragEventArgs e)
-        {
-            MessageBox.Show("Hi");
-
-        }
 
 
 
@@ -277,6 +237,8 @@ namespace HolidayMailerCSCD350
         /*
          * SEND EMAIL BACKGROUND THREAD
          */
+
+
         private void sendButton_Click(object sender, EventArgs e)
         {
             try
@@ -286,11 +248,15 @@ namespace HolidayMailerCSCD350
                     return;
                 }
 
-                mailreqs[0] = toTextBox.Text;
-                mailreqs[1] = subjectTextBox.Text;
-                mailreqs[2] = bodyTextBox.Text;
-                mailreqs[3] = accountviewBox.Text;
-                mailreqs[4] = accountpwBox.Text;
+                if (tochanged)
+                {
+                    tolist = toTextBox.Text.Split(',').ToList<string>();
+                    tochanged = false;
+                }
+                mailreqs[0] = subjectTextBox.Text;
+                mailreqs[1] = bodyTextBox.Text;
+                mailreqs[2] = accountviewBox.Text;
+                mailreqs[3] = accountpwBox.Text;
 
                 progressBar.Visible = true;
                 sendButton.Enabled = false;
@@ -307,15 +273,28 @@ namespace HolidayMailerCSCD350
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            Data.mail = new Mail(mailreqs[3], "Snigget McNigget", mailreqs[1], mailreqs[2], attachedfiles);
+            Data.mail = new Mail(mailreqs[2], "Snigget McNigget", mailreqs[0], mailreqs[1], attachedfiles);
 
-            Data.mail.AddRecip(mailreqs[0]);
+            for (int i = 0; i < tolist.Count; i++)
+            {
+                if (!Mail.ValidateEmail(tolist[i].Trim()))
+                {
+                    tolist.RemoveAt(i);
+                    i--;
+                }
+            }
 
-            bool success = Data.mail.Send(mailreqs[4], worker, e);
+            Data.mail.AddRecip(tolist);
+
+            bool success = Data.mail.Send(mailreqs[3], worker, e);
 
             if (!success)
             {
                 MessageBox.Show("Error sending email");
+            }
+            else
+            {
+                mailreqs = new string[4];
             }
 
         }
@@ -329,6 +308,27 @@ namespace HolidayMailerCSCD350
         /*
          * ATTACHMENTS 
          */
+
+        private void AddAttachment(string file)
+        {
+            ListViewItem item;
+
+            Icon iconForFile = SystemIcons.WinLogo;
+
+            System.IO.FileInfo fin = new System.IO.FileInfo(file);
+            item = new ListViewItem(fin.Name, 1);
+            iconForFile = Icon.ExtractAssociatedIcon(fin.FullName);
+            attachedfiles.Add(fin.FullName);
+
+            if (!attachmentImageList.Images.ContainsKey(fin.Extension))
+            {
+                iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(fin.FullName);
+                attachmentImageList.Images.Add(fin.Extension, iconForFile);
+            }
+            item.ImageKey = fin.Extension;
+            attachView.Items.Add(item);
+        }
+
         private void attachButton_Click(object sender, EventArgs e)
         {
             openFileDialog.ShowDialog();
@@ -340,41 +340,68 @@ namespace HolidayMailerCSCD350
 
             foreach (String file in openFileDialog.FileNames)
             {
-                ListViewItem item;
-
-                Icon iconForFile = SystemIcons.WinLogo;
-
-                System.IO.FileInfo fin = new System.IO.FileInfo(file);
-                item = new ListViewItem(fin.Name, 1);
-                iconForFile = Icon.ExtractAssociatedIcon(fin.FullName);
-                attachedfiles.Add(fin.FullName);
-
-                if (!attachmentImageList.Images.ContainsKey(fin.Extension))
-                {
-                    iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(fin.FullName);
-                    attachmentImageList.Images.Add(fin.Extension, iconForFile);
-                }
-                item.ImageKey = fin.Extension;
-                attachView.Items.Add(item);
+                AddAttachment(file);
                 //pictureBox1.Image = Bitmap.FromHicon(new Icon(openFileDialog.FileName, new Size(48, 48)).Handle);
                 //pb.Location = new Point(500, 500);
-
-
             }
 
             attachView.Visible = true;
             attachView.EndUpdate();
         }
 
+
+        /*
+        * DRAG DROP CODE
+        */
+
+
+        private void attachView_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void attachView_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            attachView.BeginUpdate();
+
+            foreach (string file in files)
+            {
+                AddAttachment(file);
+            }
+
+            attachView.Visible = true;
+            attachView.EndUpdate();
+        }
+
+        void bodyTextBox_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            attachView.BeginUpdate();
+
+            foreach (string file in files)
+            {
+                AddAttachment(file);
+            }
+
+            attachView.Visible = true;
+            attachView.EndUpdate();
+        }
+
+
+
+
         private void attachView_VisibleChanged(object sender, EventArgs e)
         {
             if (attachView.Visible)
             {
                 bodyTextBox.Location = new Point(bodyTextBox.Location.X, bodyTextBox.Location.Y + attachView.Height);
+                bodyTextBox.Size = new Size(bodyTextBox.Size.Width, bodyTextBox.Size.Height - attachView.Height);
             }
             else
             {
                 bodyTextBox.Location = new Point(bodyTextBox.Location.X, bodyTextBox.Location.Y - attachView.Height);
+                bodyTextBox.Size = new Size(bodyTextBox.Size.Width, bodyTextBox.Size.Height + attachView.Height);
             }
         }
 
@@ -412,7 +439,23 @@ namespace HolidayMailerCSCD350
         //add bcc label that when clicked will open a new textbox for bcc input
         private void toLabel_Click(object sender, EventArgs e)
         {
+            toContext.Items.Clear();
 
+            if (tochanged)
+            {
+                tolist = toTextBox.Text.Split(',').ToList<string>();
+                tochanged = false;
+            }
+
+            foreach (string address in tolist)
+            {
+                if (!address.Equals(""))
+                {
+                    toContext.Items.Add(address.Trim());
+                }
+            }
+            
+            toContext.Show(Cursor.Position);
         }
 
         //right click on toTextBox will open a context menu that shows all the current emails entered
@@ -459,6 +502,36 @@ namespace HolidayMailerCSCD350
             }
 
         }
+
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (!searchselected)
+            {
+                searchselected = true;
+                searchBox.Clear();
+                searchBox.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void searchBox_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text.Equals(""))
+            {
+                searchselected = false;
+                searchBox.Text = "Search";
+                searchBox.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void toTextBox_TextChanged(object sender, EventArgs e)
+        {
+            tochanged = true;
+        }
+
+
+
 
 
 

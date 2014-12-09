@@ -75,3 +75,6 @@ C:\School\Programming\Software Engi\Holiday Mailer 2\HolidayMailerCSCD350\obj\De
 C:\School\Programming\Software Engi\Holiday Mailer 3\HolidayMailerCSCD350\bin\Debug\HolidayMailerCSCD350.exe.config
 C:\School\Programming\Software Engi\Holiday Mailer 3\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.exe
 C:\School\Programming\Software Engi\Holiday Mailer 3\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.pdb
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 3\HolidayMailerCSCD350\bin\Debug\HolidayMailerCSCD350.exe.config
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 3\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.exe
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 3\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.pdb

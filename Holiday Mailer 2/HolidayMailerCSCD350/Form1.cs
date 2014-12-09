@@ -80,7 +80,7 @@ namespace HolidayMailerCSCD350
         {
             try
             {
-                Data.mail.AddRecip(fnametb.Text);
+                //Data.mail.AddRecip(fnametb.Text);
                // string check = Data.mail.Send("ewucscd350");
                // outputtb.Text = check;
             }
