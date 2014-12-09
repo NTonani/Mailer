@@ -40,3 +40,4 @@ C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holi
 C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.csproj.GenerateResource.Cache
 C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\System.Data.SQLite.dll
 C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\bin\Debug\System.Data.SQLite.xml
+C:\Users\Leland\Documents\school\New folder\HolidayMailerDreamStreetCSCD350\Holiday Mailer 2\HolidayMailerCSCD350\obj\Debug\HolidayMailerCSCD350.AccountForm.resources

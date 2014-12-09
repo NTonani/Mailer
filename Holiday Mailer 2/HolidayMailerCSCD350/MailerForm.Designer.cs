@@ -103,43 +103,44 @@
             // 
             // mailerToolStripMenuItem
             // 
+            this.mailerToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.mailerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.closeToolStripMenuItem});
-            this.mailerToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.mailerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.mailerToolStripMenuItem.Name = "mailerToolStripMenuItem";
             this.mailerToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.mailerToolStripMenuItem.Text = "Mailer";
             // 
             // accountToolStripMenuItem
             // 
-            this.accountToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.accountToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // closeToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.closeToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // contactsToolStripMenuItem
             // 
-            this.contactsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.contactsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.contactsToolStripMenuItem.Name = "contactsToolStripMenuItem";
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.contactsToolStripMenuItem.Text = "Contacts";
@@ -221,7 +222,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contactView.BackColor = System.Drawing.Color.White;
             this.contactView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contactView.ForeColor = System.Drawing.Color.Silver;
+            this.contactView.ForeColor = System.Drawing.Color.Black;
             this.contactView.FullRowSelect = true;
             this.contactView.HideSelection = false;
             this.contactView.Location = new System.Drawing.Point(0, 23);
@@ -237,7 +238,7 @@
             // 
             // addPage
             // 
-            this.addPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.addPage.BackColor = System.Drawing.Color.White;
             this.addPage.Controls.Add(this.clearButton);
             this.addPage.Controls.Add(this.label4);
             this.addPage.Controls.Add(this.label3);
@@ -248,6 +249,7 @@
             this.addPage.Controls.Add(this.addemailBox);
             this.addPage.Controls.Add(this.addlnameBox);
             this.addPage.Controls.Add(this.addfnameBox);
+            this.addPage.ForeColor = System.Drawing.Color.Black;
             this.addPage.Location = new System.Drawing.Point(4, 34);
             this.addPage.Name = "addPage";
             this.addPage.Padding = new System.Windows.Forms.Padding(3);
@@ -257,7 +259,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.clearButton.BackColor = System.Drawing.Color.White;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearButton.ForeColor = System.Drawing.Color.Black;
@@ -271,17 +273,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(9, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.Size = new System.Drawing.Size(53, 15);
             this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
+            this.label4.Text = "Relation";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(9, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 15);
@@ -291,7 +293,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(9, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 15);
@@ -300,11 +302,11 @@
             // 
             // addcontactButton
             // 
-            this.addcontactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.addcontactButton.BackColor = System.Drawing.Color.White;
             this.addcontactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addcontactButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addcontactButton.ForeColor = System.Drawing.Color.Black;
-            this.addcontactButton.Location = new System.Drawing.Point(6, 240);
+            this.addcontactButton.Location = new System.Drawing.Point(6, 270);
             this.addcontactButton.Name = "addcontactButton";
             this.addcontactButton.Size = new System.Drawing.Size(238, 23);
             this.addcontactButton.TabIndex = 5;
@@ -314,8 +316,8 @@
             // prevmailedCheckBox
             // 
             this.prevmailedCheckBox.AutoSize = true;
-            this.prevmailedCheckBox.ForeColor = System.Drawing.Color.Silver;
-            this.prevmailedCheckBox.Location = new System.Drawing.Point(6, 215);
+            this.prevmailedCheckBox.ForeColor = System.Drawing.Color.Black;
+            this.prevmailedCheckBox.Location = new System.Drawing.Point(6, 245);
             this.prevmailedCheckBox.Name = "prevmailedCheckBox";
             this.prevmailedCheckBox.Size = new System.Drawing.Size(210, 19);
             this.prevmailedCheckBox.TabIndex = 4;
@@ -324,9 +326,9 @@
             // 
             // addrelationBox
             // 
-            this.addrelationBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addrelationBox.BackColor = System.Drawing.Color.White;
             this.addrelationBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addrelationBox.ForeColor = System.Drawing.Color.Silver;
+            this.addrelationBox.ForeColor = System.Drawing.Color.Black;
             this.addrelationBox.Location = new System.Drawing.Point(6, 189);
             this.addrelationBox.Name = "addrelationBox";
             this.addrelationBox.Size = new System.Drawing.Size(238, 21);
@@ -334,9 +336,9 @@
             // 
             // addemailBox
             // 
-            this.addemailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addemailBox.BackColor = System.Drawing.Color.White;
             this.addemailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addemailBox.ForeColor = System.Drawing.Color.Silver;
+            this.addemailBox.ForeColor = System.Drawing.Color.Black;
             this.addemailBox.Location = new System.Drawing.Point(6, 150);
             this.addemailBox.Name = "addemailBox";
             this.addemailBox.Size = new System.Drawing.Size(238, 21);
@@ -344,9 +346,9 @@
             // 
             // addlnameBox
             // 
-            this.addlnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addlnameBox.BackColor = System.Drawing.Color.White;
             this.addlnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addlnameBox.ForeColor = System.Drawing.Color.Silver;
+            this.addlnameBox.ForeColor = System.Drawing.Color.Black;
             this.addlnameBox.Location = new System.Drawing.Point(127, 107);
             this.addlnameBox.Name = "addlnameBox";
             this.addlnameBox.Size = new System.Drawing.Size(117, 21);
@@ -354,9 +356,9 @@
             // 
             // addfnameBox
             // 
-            this.addfnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addfnameBox.BackColor = System.Drawing.Color.White;
             this.addfnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addfnameBox.ForeColor = System.Drawing.Color.Silver;
+            this.addfnameBox.ForeColor = System.Drawing.Color.Black;
             this.addfnameBox.Location = new System.Drawing.Point(6, 107);
             this.addfnameBox.Name = "addfnameBox";
             this.addfnameBox.Size = new System.Drawing.Size(117, 21);
@@ -367,7 +369,7 @@
             this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.searchBox.BackColor = System.Drawing.Color.White;
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchBox.ForeColor = System.Drawing.Color.Gray;
             this.searchBox.Location = new System.Drawing.Point(3, 37);
@@ -383,7 +385,7 @@
             // 
             this.sendtoprevCheckBox.AutoSize = true;
             this.sendtoprevCheckBox.BackColor = System.Drawing.Color.White;
-            this.sendtoprevCheckBox.ForeColor = System.Drawing.Color.Silver;
+            this.sendtoprevCheckBox.ForeColor = System.Drawing.Color.Black;
             this.sendtoprevCheckBox.Location = new System.Drawing.Point(193, 7);
             this.sendtoprevCheckBox.Name = "sendtoprevCheckBox";
             this.sendtoprevCheckBox.Size = new System.Drawing.Size(282, 17);
@@ -410,7 +412,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.attachView.BackColor = System.Drawing.Color.White;
             this.attachView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.attachView.ForeColor = System.Drawing.Color.Silver;
+            this.attachView.ForeColor = System.Drawing.Color.Black;
             this.attachView.Location = new System.Drawing.Point(7, 94);
             this.attachView.Name = "attachView";
             this.attachView.Size = new System.Drawing.Size(1048, 75);
@@ -439,7 +441,7 @@
             // 
             this.subjectTextBox.BackColor = System.Drawing.Color.White;
             this.subjectTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.subjectTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.subjectTextBox.ForeColor = System.Drawing.Color.Black;
             this.subjectTextBox.Location = new System.Drawing.Point(49, 61);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(1003, 20);
@@ -449,7 +451,7 @@
             // 
             this.toTextBox.BackColor = System.Drawing.Color.White;
             this.toTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.toTextBox.ForeColor = System.Drawing.Color.Black;
             this.toTextBox.Location = new System.Drawing.Point(49, 34);
             this.toTextBox.Name = "toTextBox";
             this.toTextBox.Size = new System.Drawing.Size(1003, 20);
@@ -461,7 +463,7 @@
             // 
             this.subjectLabel.AutoSize = true;
             this.subjectLabel.BackColor = System.Drawing.Color.White;
-            this.subjectLabel.ForeColor = System.Drawing.Color.Silver;
+            this.subjectLabel.ForeColor = System.Drawing.Color.Black;
             this.subjectLabel.Location = new System.Drawing.Point(8, 65);
             this.subjectLabel.Name = "subjectLabel";
             this.subjectLabel.Size = new System.Drawing.Size(43, 13);
@@ -472,7 +474,7 @@
             // 
             this.toLabel.AutoSize = true;
             this.toLabel.BackColor = System.Drawing.Color.White;
-            this.toLabel.ForeColor = System.Drawing.Color.Silver;
+            this.toLabel.ForeColor = System.Drawing.Color.Black;
             this.toLabel.Location = new System.Drawing.Point(30, 37);
             this.toLabel.Name = "toLabel";
             this.toLabel.Size = new System.Drawing.Size(20, 13);
@@ -502,7 +504,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bodyTextBox.BackColor = System.Drawing.Color.White;
             this.bodyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bodyTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.bodyTextBox.ForeColor = System.Drawing.Color.Black;
             this.bodyTextBox.Location = new System.Drawing.Point(3, 94);
             this.bodyTextBox.Name = "bodyTextBox";
             this.bodyTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -514,7 +516,6 @@
             // 
             this.accountviewBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.accountviewBox.BackColor = System.Drawing.Color.White;
-            this.accountviewBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accountviewBox.ForeColor = System.Drawing.Color.Black;
             this.accountviewBox.FormattingEnabled = true;
             this.accountviewBox.Location = new System.Drawing.Point(775, 3);

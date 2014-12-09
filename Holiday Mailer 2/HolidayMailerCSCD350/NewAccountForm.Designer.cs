@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAccountForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.p1Label1 = new System.Windows.Forms.Label();
             this.p1agreeButton = new System.Windows.Forms.Button();
@@ -59,13 +60,15 @@
             this.p4Label = new System.Windows.Forms.Label();
             this.p4finishButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.closeButton = new System.Windows.Forms.Button();
             this.minimizeButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -345,6 +348,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.p4Label);
             this.panel4.Controls.Add(this.p4finishButton);
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -383,6 +387,19 @@
             this.panel5.TabIndex = 18;
             this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
+            // minimizeButton
+            // 
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.minimizeButton.Location = new System.Drawing.Point(361, 2);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(31, 24);
+            this.minimizeButton.TabIndex = 20;
+            this.minimizeButton.Text = "-";
+            this.minimizeButton.UseVisualStyleBackColor = true;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            // 
             // closeButton
             // 
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -396,18 +413,15 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // minimizeButton
+            // pictureBox1
             // 
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.minimizeButton.Location = new System.Drawing.Point(361, 2);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(31, 24);
-            this.minimizeButton.TabIndex = 20;
-            this.minimizeButton.Text = "-";
-            this.minimizeButton.UseVisualStyleBackColor = true;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(141, 146);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 161);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // NewAccountForm
             // 
@@ -431,6 +445,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +485,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button minimizeButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

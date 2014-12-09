@@ -53,11 +53,13 @@ namespace HolidayMailerCSCD350
 
         private bool ValidateLogin(string account, string pw)
         {
-            if (account.ToLower().Equals("ramensnat") && pw.Equals("Iamanidiot"))
+            User temp = Data.db.ReadUser(account, pw);
+            if (temp!=null)
             {
+                Data.user = temp;
                 return true;
             }
-            return true;
+            return false;
         }
 
         private void newaccountButton_Click(object sender, EventArgs e)
@@ -116,15 +118,6 @@ namespace HolidayMailerCSCD350
             }
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             if (mailer != null)
@@ -144,6 +137,30 @@ namespace HolidayMailerCSCD350
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void pwTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+
+        /*
+         * THIS CODE RESTORES THE DRAG TO MOVE THE FORM FUNCTION REMOVED WHEN THE FORM WAS SET TO BORDERLESS
+         * 
+         *
+         */ 
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -152,8 +169,6 @@ namespace HolidayMailerCSCD350
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-
 
 
 

@@ -21,6 +21,7 @@ namespace HolidayMailerCSCD350
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
             p1Label1.Text = "Dream Street accounts are currently stored only with the client that creates them, and will not be accessible on other Holiday Mailer clients.\n\nBlah";
 
             p2Label1.Text = "Enter an Account Name and Password.\nPassword must contain at least 7 characters ";

@@ -12,57 +12,29 @@ namespace HolidayMailerCSCD350
 {
     class Mail
     {
-        private string f, name, subject, body;
+        private string name, subject, body;
+        private UserMail user;
         private List<string> to;
         private List<string> attachedfiles;
         private MailAddress from;
         private MailMessage message;
         private SmtpClient client;
 
-        public Mail(string from, string name, string subject, string body, List<String> attachedfiles)
+        public Mail(UserMail user, string name, string subject, string body, List<String> attachedfiles)
         {
-            this.from = new MailAddress(from,name);
+            this.user = user;
+            this.from = new MailAddress(user.email, name);
             this.name = name;
-            this.f = from;
+            client = user.client;
 
             this.subject = subject;
             this.body = body;
             this.attachedfiles = attachedfiles;
-            DetermineSMTP();
         }
 
         public void AddRecip(List<string> to)
         {
             this.to = to;
-        }
-
-        private bool DetermineSMTP()
-        {
-            try
-            {
-                //DIDNT DO office365, yahoo plus, at&t,  
-                if (f.Contains("@gmail"))
-                    client = new SmtpClient("smtp.gmail.com", 587);
-                else if (f.Contains("@outlook"))
-                    client = new SmtpClient("smtp.live.com", 587);
-                else if (f.Contains("@yahoo"))
-                    client = new SmtpClient("smtp.mail.yahoo.com", 587);
-                else if (f.Contains("@hotmail"))
-                    client = new SmtpClient("smtp.live.com", 587);
-                else if (f.Contains("@comcast"))
-                    client = new SmtpClient("smtp.comcast.net", 587);
-                else if (f.Contains("@verizon"))
-                    client = new SmtpClient("outgoing.verizon.net", 587);
-                else if (f.Contains("@mail"))
-                    client = new SmtpClient("smtp.mail.com", 587);
-                else
-                    return false;
-                return true; ;
-            }
-            catch (Exception err)
-            {
-                return false;
-            }
         }
 
         public static bool ValidateEmail(string address)
@@ -103,7 +75,7 @@ namespace HolidayMailerCSCD350
 
                     client.UseDefaultCredentials = false;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.Credentials = new NetworkCredential(f, pswrd);
+                    client.Credentials = new NetworkCredential(this.user.email, pswrd);
                     client.EnableSsl = true;
 
                     client.Send(message);

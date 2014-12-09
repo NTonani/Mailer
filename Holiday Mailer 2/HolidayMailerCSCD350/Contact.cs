@@ -23,15 +23,15 @@ namespace HolidayMailerCSCD350
 
         public bool Search(string cont)
         {
-            if (this.lname.Contains(cont))
+            if (this.lname != null && this.lname.Contains(cont))
                 return true;
-            else if (this.fname.Contains(cont))
+            else if (this.fname != null && this.fname.Contains(cont))
                 return true;
             else if (this.email.Contains(cont))
                 return true;
-            else if (this.rel.Contains(cont))
+            else if (this.rel != null && this.rel.Contains(cont))
                 return true;
-            else if (this.DOB.Contains(cont))
+            else if (this.DOB != null && this.DOB.Contains(cont))
                 return true;
             else return false;
         }

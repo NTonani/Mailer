@@ -71,6 +71,7 @@
             this.pwTextBox.TabIndex = 1;
             this.pwTextBox.Text = "Password";
             this.pwTextBox.Enter += new System.EventHandler(this.pwTextBox_Enter);
+            this.pwTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pwTextBox_KeyDown);
             this.pwTextBox.Leave += new System.EventHandler(this.pwTextBox_Leave);
             // 
             // loginButton

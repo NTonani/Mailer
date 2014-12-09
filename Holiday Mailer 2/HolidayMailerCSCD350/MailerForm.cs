@@ -15,6 +15,8 @@ namespace HolidayMailerCSCD350
 {
     public partial class MailerForm : Form
     {
+        AccountForm account;
+        UserMail use;
 
         bool searchselected = false;
         bool tochanged = true;
@@ -32,8 +34,13 @@ namespace HolidayMailerCSCD350
         public MailerForm()
         {
             InitializeComponent();
+            LoadUp();
 
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+        }
+
+        public void LoadUp()
+        {
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             accountpwBox.PasswordChar = '●';
 
@@ -41,8 +48,6 @@ namespace HolidayMailerCSCD350
 
             Data.db = new Database(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
             Data.cont = Data.db.ReadIn();
-
-            ShowContacts(Data.cont);
 
             attachmentImageList.ImageSize = new Size(40, 40);
             attachView.LargeImageList = attachmentImageList;
@@ -60,23 +65,18 @@ namespace HolidayMailerCSCD350
             contactView.Columns.Add("name", 100);
             contactView.Columns.Add("email", 300);
 
-            accountemails.Add("drinzypooh@hotmail.com");
-            accountemails.Add("lelandburlingame@gmail.com");
-            accountemails.Add("lburlingame@haruham.com");
-
-
-
-
-            for (int i = 0; i < accountemails.Count; i++)
-            {
-                accountviewBox.Items.Add(accountemails[i]);
-            }
-
-            accountviewBox.Text = accountemails[0];
+            ShowContacts(Data.cont);
 
             SetTheme(false);
 
+            for (int i = 0; i < Data.user.accounts.Count; i++)
+            {
+                accountviewBox.Items.Add(Data.user.accounts[i].email);
+            }
+
+            accountviewBox.Text = Data.user.accounts[0].email;
         }
+
 
         private void SetAccount()
         {
@@ -162,7 +162,7 @@ namespace HolidayMailerCSCD350
 
         private void MailerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Data.db.Close();
+            Data.Clear();
             Application.Exit();
         }
 
@@ -229,6 +229,7 @@ namespace HolidayMailerCSCD350
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Data.Clear();
             Application.Exit();
         }
 
@@ -255,8 +256,17 @@ namespace HolidayMailerCSCD350
                 }
                 mailreqs[0] = subjectTextBox.Text;
                 mailreqs[1] = bodyTextBox.Text;
-                mailreqs[2] = accountviewBox.Text;
-                mailreqs[3] = accountpwBox.Text;
+                mailreqs[2] = accountpwBox.Text;
+
+                use = new UserMail();
+                foreach (UserMail element in Data.user.accounts)
+                {
+                    if (accountviewBox.Text == element.email)
+                    {
+                        use = element;
+                        break;
+                    }
+                }
 
                 progressBar.Visible = true;
                 sendButton.Enabled = false;
@@ -273,7 +283,7 @@ namespace HolidayMailerCSCD350
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            Data.mail = new Mail(mailreqs[2], "Snigget McNigget", mailreqs[0], mailreqs[1], attachedfiles);
+            Data.mail = new Mail(use, Data.user.fname + " " + Data.user.lname, mailreqs[0], mailreqs[1], attachedfiles);
 
             for (int i = 0; i < tolist.Count; i++)
             {
@@ -286,7 +296,7 @@ namespace HolidayMailerCSCD350
 
             Data.mail.AddRecip(tolist);
 
-            bool success = Data.mail.Send(mailreqs[3], worker, e);
+            bool success = Data.mail.Send(mailreqs[2], worker, e);
 
             if (!success)
             {
