@@ -18,9 +18,6 @@ namespace HolidayMailerCSCD350
         AccountForm account;
         UserMail use;
 
-
-        bool fnselected = false;
-        bool lnselected = false;
         bool searchselected = false;
         bool tochanged = true;
 
@@ -652,47 +649,7 @@ namespace HolidayMailerCSCD350
            
         }
 
-        private void addfnameBox_Enter(object sender, EventArgs e)
-        {
-            if (!fnselected)
-            {
-                addfnameBox.Clear();
-                addfnameBox.ForeColor = Color.Black;
-                fnselected = true;
-            }
 
-        }
-
-        private void addfnameBox_Leave(object sender, EventArgs e)
-        {
-            if (addfnameBox.Text.Equals(""))
-            {
-                addfnameBox.Text = "First";
-                addfnameBox.ForeColor = Color.DarkGray;
-                fnselected = false;
-            }
-        }
-
-        private void addlnameBox_Enter(object sender, EventArgs e)
-        {
-            if (!lnselected)
-            {
-                addlnameBox.Clear();
-                addlnameBox.ForeColor = Color.Black;
-                lnselected = true;
-            }
-
-        }
-
-        private void addlnameBox_Leave(object sender, EventArgs e)
-        {
-            if (addlnameBox.Text.Equals(""))
-            {
-                addlnameBox.Text = "Last";
-                addlnameBox.ForeColor = Color.DarkGray;
-                lnselected = false;
-            }
-        }
 
 
 

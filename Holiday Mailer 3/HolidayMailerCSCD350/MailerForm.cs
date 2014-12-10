@@ -34,12 +34,12 @@ namespace HolidayMailerCSCD350
         {
             InitializeComponent();
             this.FormClosing += OnFormClosing;
-            LoadUp();
             //SetTheme();
         }
 
         public void LoadUp()
         {
+            
 
             accountpwBox.PasswordChar = '●';
 

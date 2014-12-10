@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 
 namespace HolidayMailerCSCD350
 {
@@ -24,7 +23,7 @@ namespace HolidayMailerCSCD350
 
             p1Label1.Text = "Dream Street accounts are currently stored only with the client that creates them, and will not be accessible on other Holiday Mailer clients.\n\nBlah";
 
-            p2Label1.Text = "Enter an Account Name and Password.\nAccount and Password are both CASE-SENSITIVE.\nPassword must contain at least 6 characters.";
+            p2Label1.Text = "Enter an Account Name and Password.\nPassword must contain at least 7 characters ";
             p2pwBox1.PasswordChar = '●';
             p2pwBox2.PasswordChar = '●';
 
@@ -32,7 +31,7 @@ namespace HolidayMailerCSCD350
             p3Label1.Text = "Enter a default Email Address, more can be added later.";
             p3pwBox.PasswordChar = '●';
 
-            p4Label.Text = "Your Account has been created successfully!\nWelcome to Dream Street!";
+            p4Label.Text = "Your Account has been created successfully!\n";
 
         }
 
@@ -116,49 +115,24 @@ namespace HolidayMailerCSCD350
 
         private void p2pwBox1_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPW(p2pwBox1.Text))
-            {
-                PwMatch();
-            }
+
         }
 
         private void p2pwBox2_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPW(p2pwBox1.Text))
-            {
-                PwMatch();
-            }
+
         }
 
         private bool CheckPW(string input)
         {
-            if (!Regex.IsMatch(input, "^[a-zA-Z0-9_]*$"))
-            {
-                p2Label2.Text = "Password must contain only alphanumeric characters";
-                p2nextButton.Enabled = false;
-                return false;
-            }
-            else if (input.Length < 5)
-            {
-                p2Label2.Text = "Password must be at least 6 characters";
-                p2nextButton.Enabled = false;
-                return false;
-            }
+
 
             return true;
         }
 
         private bool PwMatch()
         {
-            if (p2pwBox1.Text.Equals(p2pwBox2.Text))
-            {
-                p2Label2.Text = "";
-                p2nextButton.Enabled = true;
-                return true;
-            }
 
-            p2Label2.Text = "Passwords must match";
-            p2nextButton.Enabled = false;
             return false;
         }
 
