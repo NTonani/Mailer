@@ -203,14 +203,11 @@ namespace HolidayMailerCSCD350
                 bool temp = true;
                 for (int i = 0;i<Data.user.accounts.Count();i++)
                 {
-                    if (i != j)
-                    {
                         if (Data.user.accounts[i].email == em1tb.Text)
                         {
                             temp = false;
                             break;
                         }
-                    }
                 } 
                 if (temp)
                 {
@@ -221,7 +218,16 @@ namespace HolidayMailerCSCD350
                 }
                 else
                 {
-                    editemerrortb.Text = "Email already exists";
+                    if (Data.user.accounts[j].email == em1tb.Text && Data.user.accounts[j].pwd != pw1tb.Text)
+                    {
+                        Data.user.accounts[j].pwd = pw1tb.Text;
+                        Data.db.UpdateMailPassword(Data.user.accounts[j]);
+                        ShowEmails();
+                    }
+                    else
+                    {
+                        editemerrortb.Text = "Email already exists";
+                    }
                 }
                 
                 

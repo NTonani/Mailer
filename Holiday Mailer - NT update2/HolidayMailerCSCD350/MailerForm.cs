@@ -555,7 +555,7 @@ namespace HolidayMailerCSCD350
 
             try
             {
-                if (addfnameBox.Text != "" && addlnameBox.Text != ""&& Data.ValidateDate(addbdayBox.Text) && Data.ValidateEmail(addemailBox.Text))
+                if (Data.ValidateDate(addbdayBox.Text) && Data.ValidateEmail(addemailBox.Text))
                 {
                     Contact a = new Contact(addlnameBox.Text, addfnameBox.Text, addemailBox.Text, Convert.ToInt32(prevmailedCheckBox.Checked), addrelationBox.Text, addbdayBox.Text);
                     Data.cont.Add(a);

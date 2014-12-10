@@ -222,12 +222,15 @@ namespace HolidayMailerCSCD350
             catch (Exception er)
             {
                 Data.errorMessage = er.ToString();
+                Reset();
                 return false;
             }
         }
 
+
         public void UpdateUserEmail(User user)
         {
+            
             foreach (UserMail element in user.accounts)
             {
                 RunUserMail(element);
@@ -239,17 +242,39 @@ namespace HolidayMailerCSCD350
         {
             try
             {
+                connection.Open();
                 str = "INSERT into UserEmail VALUES (@u,@e,@p)";
                 command = new SQLiteCommand(str, connection);
                 command.Parameters.AddWithValue("u", Data.user.username);
                 command.Parameters.AddWithValue("e", usermail.email);
                 command.Parameters.AddWithValue("p", usermail.pwd);
                 command.ExecuteNonQuery();
+                Reset();
                 return true;
             }
             catch (Exception e)
             {
                 Data.errorMessage = e.ToString();
+                return false;
+            }
+        }
+
+        public bool UpdateMailPassword(UserMail usermail)
+        {
+            try
+            {
+                connection.Open();
+                str = "UPDATE UserEmail SET Password=@p WHERE Username=@u AND Email=@e";
+                command = new SQLiteCommand(str, connection);
+                command.Parameters.AddWithValue("p", usermail.pwd);    
+                command.Parameters.AddWithValue("u", Data.user.username);
+                command.Parameters.AddWithValue("e", usermail.email);
+                command.ExecuteNonQuery();
+                Reset();
+                return true;
+            }
+            catch (Exception e)
+            {
                 return false;
             }
         }
