@@ -23,7 +23,7 @@ namespace HolidayMailerCSCD350
 
             p1Label1.Text = "Dream Street accounts are currently stored only with the client that creates them, and will not be accessible on other Holiday Mailer clients.\n\nBlah";
 
-            p2Label1.Text = "Enter an Account Name and Password.\nPassword must contain at least 7 characters ";
+            p2Label1.Text = "Enter an Account Name and Password.\nAccount and Password are both CASE-SENSITIVE.\nPassword must contain at least 6 characters.";
             p2pwBox1.PasswordChar = '●';
             p2pwBox2.PasswordChar = '●';
 
@@ -50,7 +50,21 @@ namespace HolidayMailerCSCD350
         private void p2nextButton_Click(object sender, EventArgs e)
         {
             panel2.Hide();
-            panel3.Show();
+            if (ValidatePage2())
+            {
+                panel3.Show();
+            }
+            else
+            {
+                // Account name already exists
+            }
+        }
+
+        private bool ValidatePage2()
+        {
+
+
+            return true;
         }
 
         private void p3backButton_Click(object sender, EventArgs e)
@@ -62,8 +76,24 @@ namespace HolidayMailerCSCD350
         private void p3createButton_Click(object sender, EventArgs e)
         {
             panel3.Hide();
-            panel4.Show();
+            if (CreateAccount())
+            {
+                panel4.Show();
+            }
+            else
+            {
+
+            }
         }
+
+
+        private bool CreateAccount()
+        {
+
+
+            return true;
+        }
+
 
         private void p4finishButton_Click(object sender, EventArgs e)
         {
@@ -112,29 +142,148 @@ namespace HolidayMailerCSCD350
                 lnselected = false;
             }
         }
+        
+        private void p2accountBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CheckUN())
+            {
+                if (CheckPW())
+                {
+                    PwMatch();
+                }
+            }
+        }
+
+        private bool CheckUN()
+        {
+            if (!Data.CheckAlphanumeric(p2accountBox.Text))
+            {
+                p2Label3.Text = "Account Name must contain only alphanumeric characters";
+                nameast.Text = "*";
+                p2nextButton.Enabled = false;
+                return false;
+            }
+            else if (p2accountBox.Text.Length < 3)
+            {
+                p2Label3.Text = "Account Name must be at least 3 characters";
+                nameast.Text = "*";
+                p2nextButton.Enabled = false;
+                return false;
+            }
+
+            p2Label3.Text = "";
+
+            nameast.Text = "";
+            return true;
+        }
 
         private void p2pwBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (CheckPW())
+            {
+                PwMatch();
+            }
         }
 
         private void p2pwBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (CheckPW())
+            {
+                PwMatch();
+            }
         }
 
-        private bool CheckPW(string input)
+        private bool CheckPW()
         {
+            if (!Data.CheckAlphanumeric(p2pwBox1.Text))
+            {
+                p2Label2.Text = "Password must contain only alphanumeric characters";
+                pwast1.Text = "*";
+                p2nextButton.Enabled = false;
+                return false;
+            }
+            else if (p2pwBox1.Text.Length < 6)
+            {
+                p2Label2.Text = "Password must be at least 6 characters";
+                pwast1.Text = "*";
+                p2nextButton.Enabled = false;
+                return false;
+            }
 
-
+            pwast1.Text = "";
             return true;
         }
 
+
         private bool PwMatch()
         {
+            if (p2pwBox1.Text.Equals(p2pwBox2.Text))
+            {
+                p2Label2.Text = "";
+                pwast2.Text = "";
+                if (CheckUN())
+                {
+                    p2nextButton.Enabled = true;
+                    return true;
+                }
 
+            }
+
+            pwast2.Text = "*";
+            p2Label2.Text = "Passwords must match";
+            p2nextButton.Enabled = false;
             return false;
         }
+
+        private void p3emailBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (Data.ValidateUserEmail(p3emailBox1.Text))
+            {
+                EmailMatch();
+            }
+            else
+            {
+                p3Label2.Text = "Email is in invalid form or not supported";
+                p3createButton.Enabled = false;
+            }
+        }
+
+        private void p3emailBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (Data.ValidateUserEmail(p3emailBox1.Text))
+            {
+                EmailMatch();
+            }
+            else
+            {
+                p3Label2.Text = "Email is in invalid form or not supported";
+                p3createButton.Enabled = false;
+            }
+        }
+
+        private bool EmailMatch()
+        {
+            if (p3emailBox1.Text.Equals(p3emailBox2.Text))
+            {
+                p3Label2.Text = "";
+                p3createButton.Enabled = true;
+                return true;
+            }
+
+            p3Label2.Text = "Emails must match";
+            p3createButton.Enabled = false;
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
 
         private void minimizeButton_Click(object sender, EventArgs e)
         {
@@ -155,7 +304,7 @@ namespace HolidayMailerCSCD350
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        private void panelbar_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

@@ -55,8 +55,6 @@ namespace HolidayMailerCSCD350
         {
             User temp = Data.db.ReadUser(account, pw);
             
-            
-            
             if (temp!=null)
             {
                 Data.user = temp;
