@@ -20,7 +20,6 @@ namespace HolidayMailerCSCD350
             this.pwd = pwd;
             this.accounts = accounts;
         }
-
         public override string ToString()
         {
             string ret = " ";

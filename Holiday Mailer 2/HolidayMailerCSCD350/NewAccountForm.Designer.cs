@@ -237,7 +237,6 @@
             // 
             // p2nextButton
             // 
-            this.p2nextButton.Enabled = false;
             this.p2nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p2nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p2nextButton.Location = new System.Drawing.Point(279, 357);
@@ -288,7 +287,6 @@
             // 
             // p3createButton
             // 
-            this.p3createButton.Enabled = false;
             this.p3createButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p3createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p3createButton.Location = new System.Drawing.Point(279, 357);
