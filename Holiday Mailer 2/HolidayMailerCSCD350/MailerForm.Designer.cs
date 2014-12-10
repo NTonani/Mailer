@@ -118,7 +118,7 @@
             this.accountToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // settingsToolStripMenuItem
@@ -126,7 +126,7 @@
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // closeToolStripMenuItem
@@ -134,7 +134,7 @@
             this.closeToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 

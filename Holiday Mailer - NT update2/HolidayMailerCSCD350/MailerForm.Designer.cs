@@ -42,6 +42,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.contactView = new System.Windows.Forms.ListView();
             this.addPage = new System.Windows.Forms.TabPage();
+            this.resultBox = new System.Windows.Forms.TextBox();
+            this.addbdayBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +56,7 @@
             this.addlnameBox = new System.Windows.Forms.TextBox();
             this.addfnameBox = new System.Windows.Forms.TextBox();
             this.searchBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.sendtoprevCheckBox = new System.Windows.Forms.CheckBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.attachView = new System.Windows.Forms.ListView();
@@ -77,9 +81,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.toContext = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.addbdayBox = new System.Windows.Forms.TextBox();
-            this.resultBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc)).BeginInit();
             this.sc.Panel1.SuspendLayout();
@@ -94,7 +95,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mailerToolStripMenuItem,
             this.contactsToolStripMenuItem});
@@ -102,11 +103,10 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1327, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // mailerToolStripMenuItem
             // 
-            this.mailerToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.mailerToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.mailerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountToolStripMenuItem,
             this.settingsToolStripMenuItem,
@@ -121,7 +121,7 @@
             this.accountToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.accountToolStripMenuItem.Text = "Account";
             this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
@@ -130,7 +130,7 @@
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // closeToolStripMenuItem
@@ -138,12 +138,13 @@
             this.closeToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // contactsToolStripMenuItem
             // 
+            this.contactsToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.contactsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.contactsToolStripMenuItem.Name = "contactsToolStripMenuItem";
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
@@ -151,6 +152,7 @@
             // 
             // sc
             // 
+            this.sc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sc.Location = new System.Drawing.Point(0, 24);
             this.sc.Name = "sc";
@@ -165,6 +167,7 @@
             // 
             this.sc.Panel2.AllowDrop = true;
             this.sc.Panel2.BackColor = System.Drawing.Color.White;
+            this.sc.Panel2.Controls.Add(this.panel1);
             this.sc.Panel2.Controls.Add(this.sendtoprevCheckBox);
             this.sc.Panel2.Controls.Add(this.progressBar);
             this.sc.Panel2.Controls.Add(this.attachView);
@@ -176,7 +179,7 @@
             this.sc.Panel2.Controls.Add(this.sendButton);
             this.sc.Panel2.Controls.Add(this.bodyTextBox);
             this.sc.Size = new System.Drawing.Size(1327, 543);
-            this.sc.SplitterDistance = 264;
+            this.sc.SplitterDistance = 263;
             this.sc.TabIndex = 1;
             // 
             // contactControl
@@ -191,7 +194,7 @@
             this.contactControl.Location = new System.Drawing.Point(3, 63);
             this.contactControl.Name = "contactControl";
             this.contactControl.SelectedIndex = 0;
-            this.contactControl.Size = new System.Drawing.Size(259, 584);
+            this.contactControl.Size = new System.Drawing.Size(257, 584);
             this.contactControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.contactControl.TabIndex = 0;
             this.contactControl.TabStop = false;
@@ -204,7 +207,7 @@
             this.contactPage.Location = new System.Drawing.Point(4, 34);
             this.contactPage.Name = "contactPage";
             this.contactPage.Padding = new System.Windows.Forms.Padding(3);
-            this.contactPage.Size = new System.Drawing.Size(251, 546);
+            this.contactPage.Size = new System.Drawing.Size(249, 546);
             this.contactPage.TabIndex = 0;
             this.contactPage.Text = "Contacts";
             // 
@@ -232,7 +235,7 @@
             this.contactView.Location = new System.Drawing.Point(0, 23);
             this.contactView.Name = "contactView";
             this.contactView.ShowItemToolTips = true;
-            this.contactView.Size = new System.Drawing.Size(252, 537);
+            this.contactView.Size = new System.Drawing.Size(249, 537);
             this.contactView.TabIndex = 0;
             this.contactView.TabStop = false;
             this.contactView.UseCompatibleStateImageBehavior = false;
@@ -260,9 +263,38 @@
             this.addPage.Location = new System.Drawing.Point(4, 34);
             this.addPage.Name = "addPage";
             this.addPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addPage.Size = new System.Drawing.Size(251, 546);
+            this.addPage.Size = new System.Drawing.Size(249, 546);
             this.addPage.TabIndex = 1;
             this.addPage.Text = "Add Contact";
+            // 
+            // resultBox
+            // 
+            this.resultBox.BackColor = System.Drawing.Color.White;
+            this.resultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resultBox.Location = new System.Drawing.Point(31, 338);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.ReadOnly = true;
+            this.resultBox.Size = new System.Drawing.Size(185, 14);
+            this.resultBox.TabIndex = 9;
+            // 
+            // addbdayBox
+            // 
+            this.addbdayBox.BackColor = System.Drawing.Color.White;
+            this.addbdayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addbdayBox.ForeColor = System.Drawing.Color.Black;
+            this.addbdayBox.Location = new System.Drawing.Point(6, 209);
+            this.addbdayBox.Name = "addbdayBox";
+            this.addbdayBox.Size = new System.Drawing.Size(117, 21);
+            this.addbdayBox.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 191);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Birthday";
             // 
             // clearButton
             // 
@@ -357,21 +389,27 @@
             // 
             this.addlnameBox.BackColor = System.Drawing.Color.White;
             this.addlnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addlnameBox.ForeColor = System.Drawing.Color.Black;
+            this.addlnameBox.ForeColor = System.Drawing.Color.DarkGray;
             this.addlnameBox.Location = new System.Drawing.Point(129, 51);
             this.addlnameBox.Name = "addlnameBox";
             this.addlnameBox.Size = new System.Drawing.Size(117, 21);
             this.addlnameBox.TabIndex = 1;
+            this.addlnameBox.Text = "Last";
+            this.addlnameBox.Enter += new System.EventHandler(this.addlnameBox_Enter);
+            this.addlnameBox.Leave += new System.EventHandler(this.addlnameBox_Leave);
             // 
             // addfnameBox
             // 
             this.addfnameBox.BackColor = System.Drawing.Color.White;
             this.addfnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addfnameBox.ForeColor = System.Drawing.Color.Black;
+            this.addfnameBox.ForeColor = System.Drawing.Color.DarkGray;
             this.addfnameBox.Location = new System.Drawing.Point(6, 51);
             this.addfnameBox.Name = "addfnameBox";
             this.addfnameBox.Size = new System.Drawing.Size(117, 21);
             this.addfnameBox.TabIndex = 0;
+            this.addfnameBox.Text = "First";
+            this.addfnameBox.Enter += new System.EventHandler(this.addfnameBox_Enter);
+            this.addfnameBox.Leave += new System.EventHandler(this.addfnameBox_Leave);
             // 
             // searchBox
             // 
@@ -383,12 +421,19 @@
             this.searchBox.ForeColor = System.Drawing.Color.Gray;
             this.searchBox.Location = new System.Drawing.Point(3, 37);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(259, 20);
+            this.searchBox.Size = new System.Drawing.Size(253, 20);
             this.searchBox.TabIndex = 0;
             this.searchBox.Text = "Search";
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(49, 165);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 11;
             // 
             // sendtoprevCheckBox
             // 
@@ -424,7 +469,7 @@
             this.attachView.ForeColor = System.Drawing.Color.Black;
             this.attachView.Location = new System.Drawing.Point(7, 94);
             this.attachView.Name = "attachView";
-            this.attachView.Size = new System.Drawing.Size(1048, 75);
+            this.attachView.Size = new System.Drawing.Size(849, 75);
             this.attachView.TabIndex = 9;
             this.attachView.TabStop = false;
             this.attachView.UseCompatibleStateImageBehavior = false;
@@ -517,7 +562,7 @@
             this.bodyTextBox.Location = new System.Drawing.Point(3, 94);
             this.bodyTextBox.Name = "bodyTextBox";
             this.bodyTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.bodyTextBox.Size = new System.Drawing.Size(1053, 446);
+            this.bodyTextBox.Size = new System.Drawing.Size(854, 446);
             this.bodyTextBox.TabIndex = 3;
             this.bodyTextBox.Text = "";
             // 
@@ -605,7 +650,7 @@
             // 
             this.savepwcheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.savepwcheckBox.AutoSize = true;
-            this.savepwcheckBox.BackColor = System.Drawing.Color.White;
+            this.savepwcheckBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.savepwcheckBox.ForeColor = System.Drawing.Color.Black;
             this.savepwcheckBox.Location = new System.Drawing.Point(1197, 5);
             this.savepwcheckBox.Name = "savepwcheckBox";
@@ -619,7 +664,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(983, 7);
             this.label5.Name = "label5";
@@ -631,7 +676,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(700, 7);
             this.label6.Name = "label6";
@@ -643,35 +688,6 @@
             // 
             this.toContext.Name = "toContext";
             this.toContext.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Birthday";
-            // 
-            // addbdayBox
-            // 
-            this.addbdayBox.BackColor = System.Drawing.Color.White;
-            this.addbdayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addbdayBox.ForeColor = System.Drawing.Color.Black;
-            this.addbdayBox.Location = new System.Drawing.Point(6, 209);
-            this.addbdayBox.Name = "addbdayBox";
-            this.addbdayBox.Size = new System.Drawing.Size(117, 21);
-            this.addbdayBox.TabIndex = 12;
-            // 
-            // resultBox
-            // 
-            this.resultBox.BackColor = System.Drawing.Color.White;
-            this.resultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resultBox.Location = new System.Drawing.Point(31, 338);
-            this.resultBox.Name = "resultBox";
-            this.resultBox.ReadOnly = true;
-            this.resultBox.Size = new System.Drawing.Size(185, 14);
-            this.resultBox.TabIndex = 9;
             // 
             // MailerForm
             // 
@@ -765,5 +781,6 @@
         private System.Windows.Forms.TextBox addbdayBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox resultBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }
