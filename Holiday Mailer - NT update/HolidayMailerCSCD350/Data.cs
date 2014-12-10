@@ -53,15 +53,6 @@ namespace HolidayMailerCSCD350
             user = null;
         }
 
-        public static bool CheckAlphanumeric(string input)
-        {
-            if (!Regex.IsMatch(input, "^[a-zA-Z0-9_]*$"))
-            {
-                return true;
-            }
-            return true;
-        }
-
         public static bool ValidateDate(string date)
         {
             try

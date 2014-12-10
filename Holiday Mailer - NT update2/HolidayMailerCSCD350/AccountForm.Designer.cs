@@ -73,16 +73,11 @@
             this.addcanbtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.minimizeButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.closeaccountButton = new System.Windows.Forms.Button();
             this.accountgb.SuspendLayout();
             this.emailbox.SuspendLayout();
             this.passwordbx.SuspendLayout();
             this.emailaccntbox.SuspendLayout();
             this.addemailgb.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -96,8 +91,6 @@
             // 
             // unametb
             // 
-            this.unametb.BackColor = System.Drawing.Color.White;
-            this.unametb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.unametb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unametb.Location = new System.Drawing.Point(228, 79);
             this.unametb.Name = "unametb";
@@ -115,12 +108,11 @@
             // 
             // fnametb
             // 
-            this.fnametb.BackColor = System.Drawing.Color.White;
-            this.fnametb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fnametb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fnametb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnametb.Location = new System.Drawing.Point(52, 79);
             this.fnametb.Name = "fnametb";
-            this.fnametb.Size = new System.Drawing.Size(139, 26);
+            this.fnametb.Size = new System.Drawing.Size(139, 19);
             this.fnametb.TabIndex = 3;
             // 
             // label3
@@ -134,8 +126,6 @@
             // 
             // lnametb
             // 
-            this.lnametb.BackColor = System.Drawing.Color.White;
-            this.lnametb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lnametb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnametb.Location = new System.Drawing.Point(51, 133);
             this.lnametb.Name = "lnametb";
@@ -144,11 +134,10 @@
             // 
             // accountgb
             // 
-            this.accountgb.BackColor = System.Drawing.Color.White;
             this.accountgb.Controls.Add(this.cancelbtn);
+            this.accountgb.Controls.Add(this.submitbtn);
             this.accountgb.Controls.Add(this.button2);
             this.accountgb.Controls.Add(this.button1);
-            this.accountgb.Controls.Add(this.submitbtn);
             this.accountgb.Controls.Add(this.bdaytb);
             this.accountgb.Controls.Add(this.label4);
             this.accountgb.Controls.Add(this.unametb);
@@ -157,7 +146,7 @@
             this.accountgb.Controls.Add(this.label2);
             this.accountgb.Controls.Add(this.fnametb);
             this.accountgb.Controls.Add(this.label3);
-            this.accountgb.Location = new System.Drawing.Point(18, 50);
+            this.accountgb.Location = new System.Drawing.Point(12, 12);
             this.accountgb.Name = "accountgb";
             this.accountgb.Size = new System.Drawing.Size(424, 206);
             this.accountgb.TabIndex = 6;
@@ -166,58 +155,46 @@
             // 
             // cancelbtn
             // 
-            this.cancelbtn.BackColor = System.Drawing.Color.White;
-            this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelbtn.Location = new System.Drawing.Point(228, 19);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.Size = new System.Drawing.Size(101, 32);
             this.cancelbtn.TabIndex = 9;
-            this.cancelbtn.Text = "CANCEL";
-            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.cancelbtn.Text = "Cancel";
+            this.cancelbtn.UseVisualStyleBackColor = true;
             this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
             // submitbtn
             // 
-            this.submitbtn.BackColor = System.Drawing.Color.White;
-            this.submitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitbtn.Location = new System.Drawing.Point(94, 19);
+            this.submitbtn.Location = new System.Drawing.Point(90, 19);
             this.submitbtn.Name = "submitbtn";
             this.submitbtn.Size = new System.Drawing.Size(101, 32);
             this.submitbtn.TabIndex = 8;
-            this.submitbtn.Text = "SUBMIT";
-            this.submitbtn.UseVisualStyleBackColor = false;
+            this.submitbtn.Text = "Submit";
+            this.submitbtn.UseVisualStyleBackColor = true;
             this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(94, 19);
+            this.button2.Location = new System.Drawing.Point(90, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 32);
             this.button2.TabIndex = 7;
-            this.button2.Text = "EDIT";
+            this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(228, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 32);
             this.button1.TabIndex = 6;
-            this.button1.Text = "CHANGE PASSWORD";
+            this.button1.Text = "Change Password";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bdaytb
             // 
-            this.bdaytb.BackColor = System.Drawing.Color.White;
-            this.bdaytb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bdaytb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdaytb.Location = new System.Drawing.Point(228, 133);
             this.bdaytb.Name = "bdaytb";
@@ -235,7 +212,6 @@
             // 
             // emailbox
             // 
-            this.emailbox.BackColor = System.Drawing.Color.White;
             this.emailbox.Controls.Add(this.editemerrortb);
             this.emailbox.Controls.Add(this.label9);
             this.emailbox.Controls.Add(this.label8);
@@ -243,7 +219,7 @@
             this.emailbox.Controls.Add(this.em1tb);
             this.emailbox.Controls.Add(this.cnclemailbtn);
             this.emailbox.Controls.Add(this.submitemlbtn);
-            this.emailbox.Location = new System.Drawing.Point(18, 270);
+            this.emailbox.Location = new System.Drawing.Point(465, 512);
             this.emailbox.Name = "emailbox";
             this.emailbox.Size = new System.Drawing.Size(424, 137);
             this.emailbox.TabIndex = 7;
@@ -252,7 +228,7 @@
             // 
             // editemerrortb
             // 
-            this.editemerrortb.BackColor = System.Drawing.Color.White;
+            this.editemerrortb.BackColor = System.Drawing.SystemColors.Control;
             this.editemerrortb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.editemerrortb.ForeColor = System.Drawing.Color.Red;
             this.editemerrortb.Location = new System.Drawing.Point(151, 118);
@@ -281,8 +257,6 @@
             // 
             // pw1tb
             // 
-            this.pw1tb.BackColor = System.Drawing.Color.White;
-            this.pw1tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pw1tb.Location = new System.Drawing.Point(232, 79);
             this.pw1tb.Name = "pw1tb";
             this.pw1tb.Size = new System.Drawing.Size(119, 20);
@@ -290,8 +264,6 @@
             // 
             // em1tb
             // 
-            this.em1tb.BackColor = System.Drawing.Color.White;
-            this.em1tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.em1tb.Location = new System.Drawing.Point(42, 79);
             this.em1tb.Name = "em1tb";
             this.em1tb.Size = new System.Drawing.Size(153, 20);
@@ -299,59 +271,46 @@
             // 
             // cnclemailbtn
             // 
-            this.cnclemailbtn.BackColor = System.Drawing.Color.White;
-            this.cnclemailbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cnclemailbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cnclemailbtn.Location = new System.Drawing.Point(232, 19);
             this.cnclemailbtn.Name = "cnclemailbtn";
             this.cnclemailbtn.Size = new System.Drawing.Size(101, 32);
             this.cnclemailbtn.TabIndex = 16;
-            this.cnclemailbtn.Text = "CANCEL";
-            this.cnclemailbtn.UseVisualStyleBackColor = false;
+            this.cnclemailbtn.Text = "Cancel";
+            this.cnclemailbtn.UseVisualStyleBackColor = true;
             this.cnclemailbtn.Click += new System.EventHandler(this.cnclemailbtn_Click);
             // 
             // submitemlbtn
             // 
-            this.submitemlbtn.BackColor = System.Drawing.Color.White;
-            this.submitemlbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitemlbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitemlbtn.Location = new System.Drawing.Point(94, 19);
             this.submitemlbtn.Name = "submitemlbtn";
             this.submitemlbtn.Size = new System.Drawing.Size(101, 32);
             this.submitemlbtn.TabIndex = 15;
-            this.submitemlbtn.Text = "SUBMIT";
-            this.submitemlbtn.UseVisualStyleBackColor = false;
+            this.submitemlbtn.Text = "Submit";
+            this.submitemlbtn.UseVisualStyleBackColor = true;
             this.submitemlbtn.Click += new System.EventHandler(this.submitemlbtn_Click);
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(179, 151);
+            this.button4.Location = new System.Drawing.Point(163, 151);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 32);
+            this.button4.Size = new System.Drawing.Size(105, 32);
             this.button4.TabIndex = 11;
-            this.button4.Text = "ADD NEW EMAIL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Text = "Add new email";
+            this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(52, 151);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 32);
+            this.button3.Size = new System.Drawing.Size(105, 32);
             this.button3.TabIndex = 10;
-            this.button3.Text = "EDIT SELECTED EMAIL";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Text = "Edit selected email";
+            this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // passwordbx
             // 
-            this.passwordbx.BackColor = System.Drawing.Color.White;
             this.passwordbx.Controls.Add(this.innewpwtb);
             this.passwordbx.Controls.Add(this.innewpw2tb);
             this.passwordbx.Controls.Add(this.incurpwtb);
@@ -363,7 +322,7 @@
             this.passwordbx.Controls.Add(this.label5);
             this.passwordbx.Controls.Add(this.label6);
             this.passwordbx.Controls.Add(this.label7);
-            this.passwordbx.Location = new System.Drawing.Point(18, 50);
+            this.passwordbx.Location = new System.Drawing.Point(465, 31);
             this.passwordbx.Name = "passwordbx";
             this.passwordbx.Size = new System.Drawing.Size(424, 206);
             this.passwordbx.TabIndex = 8;
@@ -372,7 +331,7 @@
             // 
             // innewpwtb
             // 
-            this.innewpwtb.BackColor = System.Drawing.Color.White;
+            this.innewpwtb.BackColor = System.Drawing.SystemColors.Control;
             this.innewpwtb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.innewpwtb.ForeColor = System.Drawing.Color.Red;
             this.innewpwtb.Location = new System.Drawing.Point(292, 141);
@@ -383,7 +342,7 @@
             // 
             // innewpw2tb
             // 
-            this.innewpw2tb.BackColor = System.Drawing.Color.White;
+            this.innewpw2tb.BackColor = System.Drawing.SystemColors.Control;
             this.innewpw2tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.innewpw2tb.ForeColor = System.Drawing.Color.Red;
             this.innewpw2tb.Location = new System.Drawing.Point(292, 183);
@@ -394,7 +353,7 @@
             // 
             // incurpwtb
             // 
-            this.incurpwtb.BackColor = System.Drawing.Color.White;
+            this.incurpwtb.BackColor = System.Drawing.SystemColors.Control;
             this.incurpwtb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.incurpwtb.ForeColor = System.Drawing.Color.Red;
             this.incurpwtb.Location = new System.Drawing.Point(292, 88);
@@ -405,34 +364,26 @@
             // 
             // cancelpwbtn
             // 
-            this.cancelpwbtn.BackColor = System.Drawing.Color.White;
-            this.cancelpwbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelpwbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelpwbtn.Location = new System.Drawing.Point(228, 19);
             this.cancelpwbtn.Name = "cancelpwbtn";
             this.cancelpwbtn.Size = new System.Drawing.Size(101, 32);
             this.cancelpwbtn.TabIndex = 15;
-            this.cancelpwbtn.Text = "CANCEL";
-            this.cancelpwbtn.UseVisualStyleBackColor = false;
+            this.cancelpwbtn.Text = "Cancel";
+            this.cancelpwbtn.UseVisualStyleBackColor = true;
             this.cancelpwbtn.Click += new System.EventHandler(this.cancelpwbtn_Click);
             // 
             // submitpwbtn
             // 
-            this.submitpwbtn.BackColor = System.Drawing.Color.White;
-            this.submitpwbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitpwbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitpwbtn.Location = new System.Drawing.Point(90, 19);
             this.submitpwbtn.Name = "submitpwbtn";
             this.submitpwbtn.Size = new System.Drawing.Size(101, 32);
             this.submitpwbtn.TabIndex = 14;
-            this.submitpwbtn.Text = "SUBMIT";
-            this.submitpwbtn.UseVisualStyleBackColor = false;
+            this.submitpwbtn.Text = "Submit";
+            this.submitpwbtn.UseVisualStyleBackColor = true;
             this.submitpwbtn.Click += new System.EventHandler(this.submitpwbtn_Click);
             // 
             // curpwtb
             // 
-            this.curpwtb.BackColor = System.Drawing.Color.White;
-            this.curpwtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.curpwtb.Location = new System.Drawing.Point(153, 85);
             this.curpwtb.Name = "curpwtb";
             this.curpwtb.Size = new System.Drawing.Size(120, 20);
@@ -441,8 +392,6 @@
             // 
             // newpwtb
             // 
-            this.newpwtb.BackColor = System.Drawing.Color.White;
-            this.newpwtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newpwtb.Location = new System.Drawing.Point(153, 138);
             this.newpwtb.Name = "newpwtb";
             this.newpwtb.Size = new System.Drawing.Size(120, 20);
@@ -451,8 +400,6 @@
             // 
             // newpw2tb
             // 
-            this.newpw2tb.BackColor = System.Drawing.Color.White;
-            this.newpw2tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newpw2tb.Location = new System.Drawing.Point(153, 180);
             this.newpw2tb.Name = "newpw2tb";
             this.newpw2tb.Size = new System.Drawing.Size(120, 20);
@@ -488,11 +435,10 @@
             // 
             // emailaccntbox
             // 
-            this.emailaccntbox.BackColor = System.Drawing.Color.White;
             this.emailaccntbox.Controls.Add(this.emaillb);
             this.emailaccntbox.Controls.Add(this.button3);
             this.emailaccntbox.Controls.Add(this.button4);
-            this.emailaccntbox.Location = new System.Drawing.Point(18, 258);
+            this.emailaccntbox.Location = new System.Drawing.Point(12, 224);
             this.emailaccntbox.Name = "emailaccntbox";
             this.emailaccntbox.Size = new System.Drawing.Size(424, 206);
             this.emailaccntbox.TabIndex = 17;
@@ -501,7 +447,6 @@
             // 
             // emaillb
             // 
-            this.emaillb.BackColor = System.Drawing.Color.White;
             this.emaillb.FormattingEnabled = true;
             this.emaillb.Location = new System.Drawing.Point(52, 19);
             this.emaillb.Name = "emaillb";
@@ -510,7 +455,6 @@
             // 
             // addemailgb
             // 
-            this.addemailgb.BackColor = System.Drawing.Color.White;
             this.addemailgb.Controls.Add(this.addemerrortb);
             this.addemailgb.Controls.Add(this.addpwtb);
             this.addemailgb.Controls.Add(this.addemailtb);
@@ -518,7 +462,7 @@
             this.addemailgb.Controls.Add(this.addcanbtn);
             this.addemailgb.Controls.Add(this.label11);
             this.addemailgb.Controls.Add(this.label10);
-            this.addemailgb.Location = new System.Drawing.Point(18, 270);
+            this.addemailgb.Location = new System.Drawing.Point(32, 512);
             this.addemailgb.Name = "addemailgb";
             this.addemailgb.Size = new System.Drawing.Size(424, 137);
             this.addemailgb.TabIndex = 18;
@@ -527,7 +471,7 @@
             // 
             // addemerrortb
             // 
-            this.addemerrortb.BackColor = System.Drawing.Color.White;
+            this.addemerrortb.BackColor = System.Drawing.SystemColors.Control;
             this.addemerrortb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addemerrortb.ForeColor = System.Drawing.Color.Red;
             this.addemerrortb.Location = new System.Drawing.Point(151, 118);
@@ -538,8 +482,6 @@
             // 
             // addpwtb
             // 
-            this.addpwtb.BackColor = System.Drawing.Color.White;
-            this.addpwtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addpwtb.Location = new System.Drawing.Point(232, 77);
             this.addpwtb.Name = "addpwtb";
             this.addpwtb.Size = new System.Drawing.Size(119, 20);
@@ -547,8 +489,6 @@
             // 
             // addemailtb
             // 
-            this.addemailtb.BackColor = System.Drawing.Color.White;
-            this.addemailtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addemailtb.Location = new System.Drawing.Point(41, 77);
             this.addemailtb.Name = "addemailtb";
             this.addemailtb.Size = new System.Drawing.Size(154, 20);
@@ -556,28 +496,22 @@
             // 
             // addsubbtn
             // 
-            this.addsubbtn.BackColor = System.Drawing.Color.White;
-            this.addsubbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addsubbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addsubbtn.Location = new System.Drawing.Point(94, 19);
             this.addsubbtn.Name = "addsubbtn";
             this.addsubbtn.Size = new System.Drawing.Size(101, 32);
             this.addsubbtn.TabIndex = 1;
-            this.addsubbtn.Text = "SUBMIT";
-            this.addsubbtn.UseVisualStyleBackColor = false;
+            this.addsubbtn.Text = "Submit";
+            this.addsubbtn.UseVisualStyleBackColor = true;
             this.addsubbtn.Click += new System.EventHandler(this.addsubbtn_Click);
             // 
             // addcanbtn
             // 
-            this.addcanbtn.BackColor = System.Drawing.Color.White;
-            this.addcanbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addcanbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addcanbtn.Location = new System.Drawing.Point(232, 19);
             this.addcanbtn.Name = "addcanbtn";
             this.addcanbtn.Size = new System.Drawing.Size(101, 32);
             this.addcanbtn.TabIndex = 0;
-            this.addcanbtn.Text = "CANCEL";
-            this.addcanbtn.UseVisualStyleBackColor = false;
+            this.addcanbtn.Text = "Cancel";
+            this.addcanbtn.UseVisualStyleBackColor = true;
             this.addcanbtn.Click += new System.EventHandler(this.addcanbtn_Click);
             // 
             // label11
@@ -598,64 +532,11 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Password (if wanted saved)";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.minimizeButton);
-            this.panel1.Controls.Add(this.closeButton);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 26);
-            this.panel1.TabIndex = 19;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.minimizeButton.Location = new System.Drawing.Point(393, 2);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(31, 24);
-            this.minimizeButton.TabIndex = 22;
-            this.minimizeButton.Text = "-";
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Miramonte", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.closeButton.Location = new System.Drawing.Point(427, 2);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(31, 24);
-            this.closeButton.TabIndex = 21;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // closeaccountButton
-            // 
-            this.closeaccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeaccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeaccountButton.Location = new System.Drawing.Point(328, 470);
-            this.closeaccountButton.Name = "closeaccountButton";
-            this.closeaccountButton.Size = new System.Drawing.Size(114, 32);
-            this.closeaccountButton.TabIndex = 20;
-            this.closeaccountButton.Text = "CLOSE";
-            this.closeaccountButton.UseVisualStyleBackColor = true;
-            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(461, 518);
-            this.Controls.Add(this.closeaccountButton);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(901, 871);
             this.Controls.Add(this.addemailgb);
             this.Controls.Add(this.emailaccntbox);
             this.Controls.Add(this.emailbox);
@@ -672,7 +553,6 @@
             this.emailaccntbox.ResumeLayout(false);
             this.addemailgb.ResumeLayout(false);
             this.addemailgb.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -724,9 +604,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox editemerrortb;
         private System.Windows.Forms.TextBox addemerrortb;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button minimizeButton;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button closeaccountButton;
     }
 }

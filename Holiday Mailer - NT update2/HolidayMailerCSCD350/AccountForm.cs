@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-
 
 namespace HolidayMailerCSCD350
 {
@@ -18,8 +16,6 @@ namespace HolidayMailerCSCD350
         public AccountForm()
         {
             InitializeComponent();
-            this.ActiveControl = panel1;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             ReadOnly(true);
             passwordbx.Hide();
             emailbox.Hide();
@@ -45,7 +41,6 @@ namespace HolidayMailerCSCD350
                 emailaccntbox.Enabled = true;
                 submitbtn.Hide();
                 cancelbtn.Hide();
-                button2.Show();
                 fnametb.ReadOnly = true;
                 lnametb.ReadOnly = true;
                 unametb.ReadOnly = true;
@@ -61,7 +56,6 @@ namespace HolidayMailerCSCD350
                 emailaccntbox.Enabled = false;
                 submitbtn.Show();
                 cancelbtn.Show();
-                button2.Hide();
                 fnametb.ReadOnly = false;
                 lnametb.ReadOnly = false;
                 bdaytb.ReadOnly = false;
@@ -287,36 +281,6 @@ namespace HolidayMailerCSCD350
             em1tb.Text = "";
             pw1tb.Text = "";
             editemerrortb.Text = "";
-        }
-
-
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
         }
 
     }
