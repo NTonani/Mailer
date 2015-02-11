@@ -1,7 +1,6 @@
-HolidayMailerDreamStreetCSCD350
+Mailer
 ===============================
-EWU CSCD350 Fall 2014
 Dream Street
-Holiday Mailer project
+Holiday Mailer
 
-Simple GUI project we are making in C# using VS/.NET. User is able to add contacts to a database and choose to email specific, types, or all contacts a 'holiday' greeting.
+Simple GUI project made in C# using VS/.NET. The application allows the user to send emails to any contact(s), including contacts they add to their account, using any email they have stored with their account. The client only sends email, it does not receive.
