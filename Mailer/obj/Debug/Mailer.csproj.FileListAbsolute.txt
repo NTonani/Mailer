@@ -1,0 +1,16 @@
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\bin\Debug\Mailer.exe.config
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\bin\Debug\Mailer.exe
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\bin\Debug\Mailer.pdb
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\Mailer.csprojResolveAssemblyReference.cache
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.AccountForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.Form1.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.LoginForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.MailerForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.MessageForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.NewAccountForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.PasswordReset.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\Mailer.Properties.Resources.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\HolidayMailerCSCD350.SettingsForm.resources
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\Mailer.csproj.GenerateResource.Cache
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\Mailer.exe
+C:\School\Programming\Software Engi\Holiday Mailer - Final\Dream Street Holiday Mailer\Mailer\obj\Debug\Mailer.pdb
