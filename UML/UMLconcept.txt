@@ -1,4 +1,0 @@
-Form reads in db
-Form creates Contact instance for each contact
-Form communicates with contact and contactutilities
-Contactutilities communicates with contact instances and lists
